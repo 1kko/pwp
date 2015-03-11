@@ -1,0 +1,74 @@
+/* If you want you can use font-face */
+
+/*div.clock {
+    margin: 0 auto;
+    padding: 30px;
+}*/
+
+div.clock {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+div.clock > div.date {
+    font-size: 28px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+div.clock > ul.time {
+    width: auto;
+    list-style: none;
+    text-align: center;
+    margin: 50px 0;
+    padding: 0 0 0 0;
+    font-size: 150px;
+}
+
+div.clock > ul.time > li {
+    display: inline;
+    text-align: center;
+}
+
+div.clock > ul.time > li#point {
+    position: relative;
+    -moz-animation: mymove 1s ease infinite;
+    -webkit-animation: mymove 1s ease infinite;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Simple Animation */
+@-webkit-keyframes mymove {
+    0% {opacity: 1.0;
+}
+
+50% {
+    opacity: 0;
+    text-shadow: none;
+}
+
+100% {
+    opacity: 1.0;
+
+}	
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+    };
+}

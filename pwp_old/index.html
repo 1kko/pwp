@@ -1,0 +1,354 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<title>Welcome</title>
+
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="./css/weather.css">
+	<link rel="stylesheet" href="./css/jClocksGMT.css">
+	<script src="./js/jquery-2.1.0.min.js"></script>
+	<script src="./js/jquery.rotate.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/highcharts.js"></script>
+	<script src="./js/jClocksGMT.js"></script>
+	<script src="./js/jquery.jfeed.pack.js"></script>
+	<script src="./js/jquery.backstretch.min.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./img/favicons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="./img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./img/favicons/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="./img/favicons/favicon-196x196.png" sizes="196x196">
+	<link rel="icon" type="image/png" href="./img/favicons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="./img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="./img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="./img/favicons/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#ddc9cc">
+	<meta name="msapplication-TileImage" content="./img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+
+	<!-- Webapp Splash Screen -->
+	<!-- iPhone (Retina) (640 x 960 pixels) -->
+	<link href="./img/splash/splash-640-960.png"
+		  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iPhone 5 (640 x 1136 pixels) -->
+	<link href="./img/splash/splash-640-1136.png"
+		  media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iPad Portrait (768 x 1024 pixels) -->
+	<link href="./img/splash/splash-768-1024.png"
+		  media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+		  rel="apple-touch-startup-image">
+
+	<!-- iPad Landscape (1024 x 768 pixels) -->
+	<link href="./img/splash/splash-1024-768.png"
+	      media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+	      rel="apple-touch-startup-image">
+
+	<!-- iPad Portrait (Retina) (1536 x 2048 pixels) -->
+	<link href="./img/splash/splash-1536-2048.png"
+	      media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+	      rel="apple-touch-startup-image">
+	<!-- iPad Landscape (Retina) (2048 x 1536 pixels) -->
+	<link href="./img/splash/splash-2048-1536.png"
+	      media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+	      rel="apple-touch-startup-image">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="col-md-6">
+		<!--- Weather Widget HERE -->
+		<div id="weather"></div>
+	</div>
+	<div class="col-md-6">
+		<div class="col-md-6" id="weather_chart" style="width:100%; height:250px;" style="padding:0px"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="clock_container" id="clock_ldn">
+				<div class="clockHolder">
+					<div class="rotatingWrapper"><img class="hour" src="img/clock_hour.png" /></div>
+					<div class="rotatingWrapper"><img class="min"  src="img/clock_min.png" /></div>
+					<div class="rotatingWrapper"><img class="sec"  src="img/clock_sec.png" /></div>
+					<img class="clock" src="img/clock_face2.png">
+				</div>
+				<div class="digital">
+					London, <span class="period"></span>
+				</div>
+			</div>
+			<div class="clock_container" id="clock_sel">
+				<div class="clockHolder">
+					<div class="rotatingWrapper"><img class="hour" src="img/clock_hour.png" /></div>
+					<div class="rotatingWrapper"><img class="min"  src="img/clock_min.png" /></div>
+					<div class="rotatingWrapper"><img class="sec"  src="img/clock_sec.png" /></div>
+					<img class="clock" src="img/clock_face2.png">
+				</div>
+				<div class="digital">
+					Seoul, <span class="period"></span>
+				</div>
+			</div>
+			<div class="clock_container" id="clock_sfc">
+				<div class="clockHolder">
+					<div class="rotatingWrapper"><img class="hour" src="img/clock_hour.png" /></div>
+					<div class="rotatingWrapper"><img class="min"  src="img/clock_min.png" /></div>
+					<div class="rotatingWrapper"><img class="sec"  src="img/clock_sec.png" /></div>
+					<img class="clock" src="img/clock_face2.png">
+				</div>
+				<div class="digital">
+					SanFrancisco, <span class="period"></span>
+				</div>
+			</div>
+			<div class="clock_container" id="clock_wdc">
+				<div class="clockHolder">
+					<div class="rotatingWrapper"><img class="hour" src="img/clock_hour.png" /></div>
+					<div class="rotatingWrapper"><img class="min"  src="img/clock_min.png" /></div>
+					<div class="rotatingWrapper"><img class="sec"  src="img/clock_sec.png" /></div>
+					<img class="clock" src="img/clock_face2.png">
+				</div>
+				<div class="digital">
+					WashingtonD.C, <span class="period"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- RSS Feed Here -->
+	<div class="col-md-12 col-xs-12" id="divRss" style="margin-top:20px;"></div>
+
+</div>
+
+<script src="./js/jquery.simpleWeather.min.js"></script>
+
+<script>
+	var weatherUrl='http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4146351000';
+
+	weather={};
+
+	weather_array={};
+	weather_array['hour']=[];
+	weather_array['temp']=[];
+	weather_array['precipitation']=[];
+	weather_array['snow']=[];
+	weather_array['wind']=[];
+	weather_array['wind_direction']=[];
+	weather_array['humidity']=[];
+	weather_array['forecast']=[];
+	weather_array['weather_code']=[];
+
+	function LoaderHighChart(){
+	// HighChart Data
+	    $('#weather_chart').highcharts({
+			credits: { enabled: 0 },
+			chart: {
+				type: 'areaspline',
+				backgroundColor: null,
+				borderWidth: null
+			},
+			title: {
+				text: "3 Day Forecasts"
+			},
+			subtitle: {
+				text: ""
+			},
+			xAxis: {
+				categories: weather_array['hour']
+			},
+			yAxis: {
+				title: { text: 'Temp' },
+				labels: {
+					formatter: function() { return this.value +'°' }
+				}
+			},
+			tooltip: {
+				crosshairs: true,
+				shared: true
+			},
+			plotOptions: {
+				areaspline: {
+					dataLabels: {
+						enabled: true
+					}
+				}
+			},
+			series: [
+			{ 
+				name: 'Temp',
+				data: weather_array['temp']
+			},
+			{
+				name: 'Precipitation',
+				data: weather_array['precipitation']
+			},
+			{
+				name: 'Wind',
+				data: weather_array['wind']
+			}
+
+			]
+		});
+	}
+
+	function LoaderBackgroundChanger(weather_code){
+	// change background (refer to Weather Table below)
+		$.backstretch('./img/weather/'+weather_code+'.jpg');
+	}
+
+	$(document).ready(function(){
+
+
+	// Clock Data
+		$('#clock_ldn').jClocksGMT({offset: '+1'});
+		$('#clock_sel').jClocksGMT({offset: '+9'});
+		$('#clock_sfc').jClocksGMT({offset: '-7'});
+		$('#clock_wdc').jClocksGMT({offset: '-4'});
+
+
+	// Weather Data
+		$.simpleWeather({
+			location: '',
+			woeid: '28809879',
+			unit: 'c',
+			success: function(weather) {
+				html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+				html += '<li class="currently">'+weather.currently+'</li>';
+
+				LoaderBackgroundChanger(weather.code);
+
+				$("#weather").html(html);
+			},
+			error: function(error) {
+				$("#weather").html('<p>'+error+'</p>');
+			}
+		});
+
+
+	// HighChart Data from KMA.go.kr
+		$.ajax({
+			url: "xml2json.php?url="+weatherUrl,
+			dataType: "json",
+			success: function (data) {
+				objs = data.channel.item.description.body.data;
+				$(objs).each(function(index){
+					weather_array['hour'].push(parseInt(objs[index].hour));
+					weather_array['temp'].push(parseInt(objs[index].temp));
+					weather_array['precipitation'].push(parseInt(objs[index].r06));
+					weather_array['snow'].push(parseInt(objs[index].s06));
+					weather_array['wind'].push(parseInt(objs[index].ws));
+					weather_array['wind_direction'].push(parseInt(objs[index].wdEn));
+					weather_array['humidity'].push(parseInt(objs[index].reh));
+					weather_array['forecast'].push(objs[index].wfEn);
+
+					LoaderHighChart();
+				});
+			}
+		});
+
+	/*
+	****** Weather Table ******
+	// reference http://css-tricks.com/using-weather-data-to-change-your-websites-apperance-through-php-and-css/
+	// https://developer.yahoo.com/weather/#codes
+
+	x0  	tornado
+	x1 	tropical storm
+	x2 	hurricane
+	x3 	severe thunderstorms
+	x4 	thunderstorms
+	x5 	mixed rain and snow
+	x6 	mixed rain and sleet
+	x7 	mixed snow and sleet
+	x8 	freezing drizzle
+	x9 	drizzle
+	x10 	freezing rain
+	x11 	showers (should be night)
+	x12 	showers (should be day)
+	x13 	snow flurries
+	x14 	light snow showers
+	x15 	blowing snow
+	x16 	snow
+	x17 	hail
+	x18 	sleet
+	x19 	dust
+	x20 	foggy
+	x21 	haze
+	x22 	smoky
+	x23 	blustery
+	x24 	windy
+	x25 	cold
+	x26 	cloudy
+	x27 	mostly cloudy (night)
+	x28 	mostly cloudy (day)
+	x29 	partly cloudy (night)
+	x30 	partly cloudy (day)
+	x31 	clear (night)
+	x32 	sunny
+	x33 	fair (night)
+	x34 	fair (day)
+	x35 	mixed rain and hail
+	x36 	hot
+	x37 	isolated thunderstorms
+	x38 	scattered thunderstorms
+	x39 	scattered thunderstorms
+	x40 	scattered showers
+	x41 	heavy snow
+	x42 	scattered snow showers
+	x43 	heavy snow
+	x44 	partly cloudy
+	x45 	thundershowers
+	x46 	snow showers
+	x47 	isolated thundershowers
+	*/
+
+	});
+
+	// jFeed RSS Data
+	jQuery(function() {
+		jQuery.browser = {};
+			(function () {
+				jQuery.browser.msie = false;
+				jQuery.browser.version = 0;
+				if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+				jQuery.browser.msie = true;
+				jQuery.browser.version = RegExp.$1;
+			}
+		})();
+
+		jQuery.getFeed({
+			url:'proxy.php?url=http://hankookilbo.com/rss.aspx', 
+			success: function(feed) {
+				var html='';
+				for (var i=0;i<feed.items.length && i<7; i++ ) {
+					var item = feed.items[i];
+					html += '<div class="panel panel-info">';
+					html += '<div class="panel-heading">';
+					html += '<a href="' + item.link + '" name="ttstitle"' + '>' + item.title + '</a>' + ' '+'<small>' + item.updated + '</small>';
+					html += '</div>';
+					html += '<div class="panel-body">'+item.description+'</div>';
+					html += '</div>';
+				}
+				jQuery('#divRss').append(html);
+			}
+		});
+
+	});
+</script>
+
+</body>	
+
+</html>
