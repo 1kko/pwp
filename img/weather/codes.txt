@@ -1,0 +1,50 @@
+        x0      tornado
+        x1      tropical storm
+        x2      hurricane
+        x3      severe thunderstorms
+        x4      thunderstorms
+        x5      mixed rain and snow
+        x6      mixed rain and sleet
+        x7      mixed snow and sleet
+        x8      freezing drizzle
+        x9      drizzle
+        x10     freezing rain
+        x11     showers (should be night)
+        x12     showers (should be day)
+        x13     snow flurries
+        x14     light snow showers
+        x15     blowing snow
+        x16     snow
+        x17     hail
+        x18     sleet
+        x19     dust
+        x20     foggy
+        x21     haze
+        x22     smoky
+        x23     blustery
+        x24     windy
+        x25     cold
+        x26     cloudy
+        x27     mostly cloudy (night)
+        x28     mostly cloudy (day)
+        x29     partly cloudy (night)
+        x30     partly cloudy (day)
+        x31     clear (night)
+        x32     sunny
+        x33     fair (night)
+        x34     fair (day)
+        x35     mixed rain and hail
+        x36     hot
+        x37     isolated thunderstorms
+        x38     scattered thunderstorms
+        x39     scattered thunderstorms
+        x40     scattered showers
+        x41     heavy snow
+        x42     scattered snow showers
+        x43     heavy snow
+        x44     partly cloudy
+        x45     thundershowers
+        x46     snow showers
+        x47     isolated thundershowers
+        x3200   not available
+
